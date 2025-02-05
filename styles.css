@@ -123,7 +123,7 @@ h1 {
 
 .drum:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(218, 4, 99, 0.5);
+  box-shadow: 0 0 25px rgb(9, 192, 228);
 }
 
 .portfolio {
@@ -189,4 +189,32 @@ footer {
       font-size: 1rem;
       padding: 0 1rem;
   }
+}
+
+.w {
+  background-image: url("./images/tom3.png");
+}
+
+.a {
+  background-image: url("./images/snare.png");
+}
+
+.s {
+  background-image: url("./images/tom1.png");
+}
+
+.d {
+  background-image: url("./images/tom2.png");
+}
+
+.j {
+  background-image: url("./images/crash.png");
+}
+
+.k {
+  background-image: url("./images/kick.png");
+}
+
+.l {
+  background-image: url("./images/tom4.png");
 }
