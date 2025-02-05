@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arvo', cursive;
+  background-image: url('./images/music_project.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #DBEDF3;
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.falling-bubble {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1000;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+      transform: translateY(100vh);
+      opacity: 0;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.intro {
+  margin-bottom: 4rem;
+  animation: fadeIn 1.5s ease-out;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #DBEDF3;
+  text-shadow: 3px 3px #DA0463;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.description {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.2rem;
+}
+
+.btn-grad {
+  display: inline-block;
+  padding: 15px 45px;
+  background-image: linear-gradient(to right, #3494E6 0%, #EC6EAD 51%, #3494E6 100%);
+  background-size: 200% auto;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.5s;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+}
+
+.drum-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  animation: slideUp 1s ease-out;
+  margin: 2rem 0;
+}
+
+.drum {
+  width: 150px;
+  height: 150px;
+  border: 10px solid #404B69;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #DA0463;
+  text-shadow: 2px 2px #DBEDF3;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.drum:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(218, 4, 99, 0.5);
+}
+
+.portfolio {
+  display: inline-block;
+  text-decoration: none;
+  color: #EC6EAD;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+.portfolio::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #3494E6, #EC6EAD);
+  transition: width 0.3s ease;
+}
+
+.portfolio:hover {
+  color: #3494E6;
+  transform: scale(1.05);
+  text-shadow: 1px 1px 2px rgba(218, 4, 99, 0.3);
+}
+
+.portfolio:hover::before {
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  .drum { 
+      width: 100px; 
+      height: 100px;
+      font-size: 2rem;
+  }
+  .description {
+      font-size: 1rem;
+      padding: 0 1rem;
+  }
+}
